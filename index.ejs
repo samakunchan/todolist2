@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TP TODOLIST</title>
+</head>
+<body>
+  <h1>Ma todolist</h1>
+    <ul>
+    <% if (locals.theList){
+    locals.theList.forEach(function (list, key) {
+    %>
+      <li><%= list;%> <a href="/supprimer/<%= key %>">x</a></li>
+    <%
+    })}%>
+    </ul>
+  <form id="form" action="/" method="post">
+    <label for="list">Que dois-je faire?</label>
+    <input type="text" id="list" name="list" autocomplete="on" autofocus>
+    <input type="submit" value="valider">
+  </form>
+</body>
+<!-- <script src="/socket.io/socket.io.js"></script> -->
+</html>
